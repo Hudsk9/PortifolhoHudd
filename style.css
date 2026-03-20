@@ -16,14 +16,14 @@ html, body {
 /* LAYOUT */
 #wrapper {
     width: 100%;
-    height: 300vh;
+    height: 400vh;
     transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
     will-change: transform;
 }
 
 .tela {
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -454,5 +454,353 @@ p {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+
+#tela4 {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(42, 255, 149, 0.22), transparent 38%),
+        radial-gradient(circle at 82% 82%, rgba(0, 197, 104, 0.16), transparent 46%),
+        linear-gradient(135deg, #07130d 0%, #0f271b 52%, #0a1d14 100%);
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+}
+
+#tela4::before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    top: -140px;
+    right: -120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 220, 110, 0.18) 0%, rgba(0, 220, 110, 0) 70%);
+    filter: blur(8px);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+#tela4 h2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: min(1100px, 95%);
+    margin: 0 auto 10px;
+    text-align: left;
+}
+
+.skills-wrapper {
+    width: min(1100px, 95%);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 20px;
+    z-index: 1;
+    perspective: 1000px;
+}
+
+.skill-card {
+    position: relative;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    padding: 24px 22px;
+    text-align: left;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(8px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.skill-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(125, 255, 178, 0.14);
+    pointer-events: none;
+}
+
+.skill-card:hover {
+    transform: translateY(-14px) scale(1.03);
+    border-color: rgba(147, 255, 190, 0.42);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55),
+                0 0 30px rgba(98, 255, 164, 0.10);
+}
+
+.skill-card h3 {
+    color: #e3e3e3;
+    font-size: 17px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+}
+
+.skill-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skill-card li {
+    color: #b5b5b5;
+    font-size: 14px;
+    line-height: 1.45;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 8px;
+}
+
+.skill-card li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.skill-level {
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.level-advanced {
+    color: #8cd68c;
+}
+
+.level-basic {
+    color: #e3d083;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill-card,
+    .skill-card:hover {
+        transition-duration: 0.25s;
+        transform: none;
+    }
+}
+
+@media (max-width: 1100px) {
+    #wrapper {
+        height: 400svh;
+    }
+
+    .tela {
+        padding: 40px 28px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 21px;
+    }
+
+    #tela2 h2 {
+        top: 120px;
+        left: 60px;
+    }
+
+    .sobre-texto {
+        top: 185px;
+        left: 60px;
+        max-width: 52%;
+    }
+
+    .sobre-foto-container {
+        right: 70px;
+    }
+
+    .foto-perfil {
+        width: 210px;
+        height: 210px;
+    }
+
+    .projetos-grid {
+        gap: 18px;
+        margin-top: 120px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .projeto-card {
+        width: min(300px, 44vw);
+    }
+
+    .skills-wrapper {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    #wrapper {
+        height: 400svh;
+    }
+
+    .tela {
+        height: 100svh;
+        min-height: 100svh;
+        padding: 20px 18px 28px;
+    }
+
+    h1 {
+        font-size: 34px;
+        letter-spacing: 1px;
+        white-space: normal;
+        line-height: 1.15;
+    }
+
+    p {
+        font-size: 18px;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .social-icons,
+    .social-icons-contato {
+        right: 16px;
+        bottom: 16px;
+        gap: 10px;
+    }
+
+    .social-link {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    #tela2 {
+        justify-content: flex-start;
+        padding-top: 30px;
+        overflow-y: auto;
+    }
+
+    #tela2 h2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 18px;
+    }
+
+    .sobre-foto-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        margin-bottom: 16px;
+    }
+
+    .foto-perfil {
+        width: 145px;
+        height: 145px;
+    }
+
+    .sobre-texto {
+        position: relative;
+        top: auto;
+        left: auto;
+        max-width: 100%;
+        gap: 10px;
+        padding-bottom: 72px;
+    }
+
+    .sobre-paragrafo {
+        font-size: 14px;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    #tela3 {
+        justify-content: flex-start;
+        padding-top: 34px;
+        gap: 22px;
+        overflow-y: auto;
+    }
+
+    #tela3 h2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 4px;
+    }
+
+    .projetos-grid {
+        width: 100%;
+        margin-top: 0;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 28px;
+    }
+
+    .projeto-card {
+        width: min(340px, 92vw);
+    }
+
+    #tela4 {
+        justify-content: flex-start;
+        padding-top: 34px;
+        overflow-y: auto;
+    }
+
+    #tela4 h2 {
+        width: 100%;
+        margin-bottom: 14px;
+    }
+
+    .skills-wrapper {
+        grid-template-columns: 1fr;
+        width: 100%;
+        padding-bottom: 26px;
+    }
+
+    .skill-card li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    #dots {
+        right: 10px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .projeto-thumb {
+        height: 145px;
+    }
+
+    .skill-card {
+        padding: 18px 16px;
+    }
+
+    .skill-card h3 {
+        font-size: 16px;
     }
 }

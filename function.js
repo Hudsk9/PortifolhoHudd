@@ -196,6 +196,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const socialIcons = document.querySelector('.social-icons');
     let atual         = 0;
     let animando      = false;
+    let touchStartY   = 0;
+    let touchEndY     = 0;
+
+    function moverWrapper() {
+        const deslocamento = atual * window.innerHeight;
+        wrapper.style.transform = `translateY(-${deslocamento}px)`;
+    }
 
     function mostrarIcons(delay = 0) {
         setTimeout(() => {
@@ -205,7 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, delay);
     }
 
-    
     mostrarIcons(300);
 
     function irPara(index) {
@@ -213,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animando = true;
         atual = index;
 
-        wrapper.style.transform = `translateY(-${atual * 100}vh)`;
+        moverWrapper();
 
         dots.forEach((d, i) => {
             d.classList.toggle('ativo', i === atual);
@@ -229,6 +235,24 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('wheel', (e) => {
         if (e.deltaY > 0) irPara(atual + 1);
         else irPara(atual - 1);
+    });
+
+    window.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener('touchend', (e) => {
+        touchEndY = e.changedTouches[0].clientY;
+        const deltaY = touchStartY - touchEndY;
+        const threshold = 45;
+
+        if (Math.abs(deltaY) < threshold) return;
+        if (deltaY > 0) irPara(atual + 1);
+        else irPara(atual - 1);
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+        moverWrapper();
     });
 
     
