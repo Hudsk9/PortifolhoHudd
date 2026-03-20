@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifolho - Hudson Henrique</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+         <!-- TELA 1 -->
+        <section class="tela" id="tela1">
+            <canvas id="particulas"></canvas>
+            <h1></h1>
+            <p></p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/hudson-henrique-bogarim-brito-b174042ba" target="_blank" class="social-link" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Hudsk9" target="_blank" class="social-link" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- TELA 2 -->
+        <section class="tela" id="tela2">
+            <canvas id="ondas"></canvas>
+            <h2>Sobre mim</h2>
+            <div class="sobre-foto-container">
+                <img src="assets/img/foto-perfil.jpg" alt="Foto de Hudson" class="foto-perfil">
+            </div>
+            <div class="social-icons-contato">
+                <a href="https://wa.me/5594984074171?text=Ol%C3%A1%20Hudson%2C%20vim%20pelo%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" class="social-link" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/hhuddsk" target="_blank" class="social-link" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <div class="sobre-texto">
+                <p class="sobre-paragrafo">Olá, me chamo Hudson e sou estudante de programação. Cursando
+                    atualmente no 5º período de Ciência da Computação no Instituto Federal do Pará (IFPA).</p>
+
+                <p class="sobre-paragrafo">O que mais me motiva no ramo da programação é a diversidade e os desafios
+                    que encontro pela frente que nunca são os mesmos, e é isso que me faz nunca querer parar de 
+                    aprender algo novo e de está sempre atualizado com as novas tecnologias. Entre em contato e vamos trocar uma idéia!! ;)</p>
+
+                <p class="sobre-paragrafo"></p>
+            </div>
+        </section>
+
+        <!-- TELA 3 -->
+        <section class="tela" id="tela3">
+            <div class="blob blob1"></div>
+            <div class="blob blob2"></div>
+            <div class="blob blob3"></div>
+            <div class="blob blob4"></div>
+            <h2>Projetos</h2>
+
+            <div class="projetos-grid">
+
+                <div class="projeto-card">
+                    <div class="projeto-thumb">
+                        
+                        <img src="assets/img/projeto1.jpg" alt="Imagem Projeto 1" class="projeto-img">
+                        <span class="projeto-thumb-placeholder">&#128247;</span>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Projeto 1</h3>
+                        <p>Cardápio Didital IFPA - Tucuruí.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.exemplo.cardapio_ifpa&hl=pt" class="projeto-link" target="_blank">Ver projeto →</a>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-thumb">
+                        
+                        <img src="assets/img/projeto2.jpg" alt="Imagem Projeto 2" class="projeto-img">
+                        <span class="projeto-thumb-placeholder">&#128247;</span>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Projeto 2</h3>
+                        <p>Breve descrição do projeto.</p>
+                        <a href="#" class="projeto-link" target="_blank">Ver projeto →</a>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <div class="projeto-thumb">
+                        
+                        <img src="assets/img/projeto3.jpg" alt="Imagem Projeto 3" class="projeto-img">
+                        <span class="projeto-thumb-placeholder">&#128247;</span>
+                    </div>
+                    <div class="projeto-info">
+                        <h3>Projeto 3</h3>
+                        <p>Breve descrição do projeto.</p>
+                        <a href="#" class="projeto-link" target="_blank">Ver projeto →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- NAVEGAÇÃO -->
+    <nav id="dots">
+        <span class="dot ativo" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+    </nav>
+
+    <script src="function.js"></script>
+</body>
+
+</html>
